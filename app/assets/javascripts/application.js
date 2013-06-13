@@ -12,4 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
+
+$(function(){
+	$(".fei_button").click(function(){
+		$(".fei").css("display","none");
+	});
+	$(".tao_button").click(function(){
+		$(".fei1").css("display","none");
+	});
+});

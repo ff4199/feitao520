@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @shuoshuo.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @shuoshuo.content %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @shuoshuo.user %>
+</p>
+
+<p>
+  <b>Pic:</b>
+  <%= @shuoshuo.pic %>
+</p>
+
+
+<%= link_to 'Edit', edit_shuoshuo_path(@shuoshuo) %> |
+<%= link_to 'Back', shuoshuos_path %>

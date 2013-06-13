@@ -1,0 +1,91 @@
+
+<div class="top_shuoshuo">
+ 
+</div>
+<div class="fei_shuoshuo">
+    <% @shuoshuos.each do |shuoshuo| %>
+      <%if shuoshuo.user=="fei"%>      
+          <ul class="thumbnails ">
+            <li class="span5 content">
+              <div class="thumbnail"> <img  src="img/people.jpg">
+                <div class="caption" contenteditable="true">
+                   <button class="date btn btn-primary btn-large btn-block" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
+                  <h3 class="feishuoshuo_title"><%= shuoshuo.title %></h3>
+                  <p ><%= shuoshuo.content %></p>
+                  <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+      <% end %>
+    <% end %>
+</div>
+
+<div class="zhongjian">
+    <div class="button_fei">
+       <button id="modal-304241" href="#modal-container-304241" role="button" class="fei_button btn btn-primary btn-large" data-toggle="modal">他说</button> 
+    </div>
+    <div class="button_tao">
+       <button id="modal-160836" href="#modal-container-160836" role="button" class="tao_button btn btn-large btn-danger" data-toggle="modal">她说</button>
+       <%=hidden_field_tag "flag",@where,class:"hidden"%>
+       
+       <%=render "fei_public"%>
+    </div>
+    <!-- <div class="fei1">aaaaa</div> -->
+    <%=@where%>
+</div>
+
+<div class="tao_shuoshuo">
+  <% @shuoshuos.each do |shuoshuo| %>
+      <%if shuoshuo.user=="tao"%>      
+          <ul class="thumbnails">
+            <li class="span5 content">
+              <div class="thumbnail"> <img  src="img/people.jpg">
+                <div class="caption" contenteditable="true">
+                  <button class="date btn btn-large btn-block btn-warning" type="button"><%=shuoshuo.created_at%></button> 
+                  <h3 class="taoshuoshuo_title"><%= shuoshuo.title %></h3>
+                  <p><%= shuoshuo.content %></p>
+                  <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+      <% end %>
+    <% end %>
+</div>
+ 
+
+
+
+
+
+<h1>Listing shuoshuos</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>User</th>
+    <th>Pic</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shuoshuos.each do |shuoshuo| %>
+
+  <tr>
+    <td><%= shuoshuo.title %></td>
+    <td><%= shuoshuo.content %></td>
+    <td><%= shuoshuo.user %></td>
+    <td><%= shuoshuo.pic %></td>
+    <td><%= link_to 'Show', shuoshuo %></td>
+    <td><%= link_to 'Edit', edit_shuoshuo_path(shuoshuo) %></td>
+    <td><%= link_to 'Destroy', shuoshuo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shuoshuo', new_shuoshuo_path %>

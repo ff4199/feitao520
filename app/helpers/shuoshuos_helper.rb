@@ -1,0 +1,2 @@
+module ShuoshuosHelper
+end

@@ -1,0 +1,22 @@
+<div id="modal-container-160836" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">
+        今天她想说：
+      </h3>
+    </div>
+    <div class="modal-body">
+      
+      <%=form_tag ("/shuoshuos")%>
+		<%=label_tag "主题"%>
+		<%=text_field_tag :title,params[:title],size:20%>
+
+		<%=label_tag "内容"%>
+		<%=text_area_tag :content,params[:content],size:"200x10"%>
+		<%=hidden_field_tag :user,"tao"%>
+    </div>
+    <div class="modal-footer">              
+       <%=submit_tag "发表",class:"btn btn-danger"%>
+       <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    </div>
+  </div>
