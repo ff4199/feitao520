@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611095811) do
+ActiveRecord::Schema.define(:version => 20130613121349) do
 
   create_table "pictures", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130611095811) do
     t.string   "pic"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "pinglun"
   end
 
   add_index "shuoshuos", ["user", "created_at"], :name => "index_shuoshuos_on_user_and_created_at"
