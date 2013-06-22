@@ -51,20 +51,36 @@ li a{
 
 /*中间*/
 .zhongjian{
-	background-image:url(middle.png);
-	width:242px;
-	height:1000px;
+	background-image:url(7.png);
+	width:243px;
+	height:10000px;
 	float:left;
 	margin-left:25px;
 }
 .button_fei{
-	margin-left:40px;
+	margin-top:25px;
+	margin-left:45px;
 	float:left;
 }
 .button_tao{
+	margin-top:25px;
 	margin-left:30px;
 	float:left;
 	
+}
+.together_date{
+	background-image:url(liuyan.png);
+	background-repeat:no-repeat;
+	float:left;
+	margin-left:25px;
+	margin-top:25px;
+	height:200px;
+	width:100%;
+}
+.together_date h2{
+	float:left;
+	margin-left:28px;
+	margin-top:30px;
 }
 /*顶端*/
 .top_shuoshuo{
@@ -84,7 +100,45 @@ li a{
 	margin-left:20px;
 }
 .pic_top{
-	background-image:url(pic_top.jpg);
 	width:100%;
 	height:200px;
+}
+.pic_top_fei{
+	background-image:url(fei.png);
+	background-repeat:no-repeat;
+	float:left;
+	margin-left:100px;
+	margin-top:30px;
+	height:140px;
+	width:140px;
+	
+}
+.pic_top_tao{
+	background-image:url(tao.png);
+	background-repeat:no-repeat;
+	float:left;
+	margin-left:10px;
+	margin-top:30px;
+	height:140px;
+	width:140px;
+}
+/*说说背景图片*/
+.shuoshuo_class{
+	background-image:url(6.jpg);
+	height:100%;
+}
+/*照片墙背景图片*/
+.pic_class{
+	background-image:url(pic_background.png);
+	background-repeat:repeat;
+	height:100%;
+}
+
+/*视频*/
+.video{
+	float:left;
+	width:700px;
+	height:500px;
+	margin-left:200px;
+	margin-top:20px;
 }

@@ -11,14 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613121349) do
+ActiveRecord::Schema.define(:version => 20130622132640) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "file_name"
+    t.string   "content_type"
+    t.string   "file_size"
+    t.string   "attachmentable_type"
+    t.integer  "attachmentable_id"
+    t.string   "attachment"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "pictures", :force => true do |t|
     t.string   "name"
-    t.string   "url"
     t.string   "introduce"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "people"
+  end
+
+  create_table "pingluns", :force => true do |t|
+    t.string   "comment"
+    t.string   "user"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "shuoshuo_id"
   end
 
   create_table "shuoshuos", :force => true do |t|
@@ -28,9 +47,15 @@ ActiveRecord::Schema.define(:version => 20130613121349) do
     t.string   "pic"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "pinglun"
   end
 
   add_index "shuoshuos", ["user", "created_at"], :name => "index_shuoshuos_on_user_and_created_at"
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>视频简介:</b>
+  <%= @video.title %>
+</p>
+
+<p>
+  <b>视频地址:</b>
+  <%= @video.url %>
+</p>
+
+
+<%= link_to '编辑视频', edit_video_path(@video) %> |
+<%= link_to '返回', videos_path %>

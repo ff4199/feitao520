@@ -1,4 +1,10 @@
 Feitao520::Application.routes.draw do
+  resources :videos
+
+
+  resources :pingluns
+
+
   resources :pictures
 
 

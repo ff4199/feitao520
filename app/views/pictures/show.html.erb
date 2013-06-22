@@ -1,20 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>照片标题</b>
   <%= @picture.name %>
 </p>
 
-<p>
-  <b>Url:</b>
-  <%= @picture.url %>
-</p>
 
 <p>
-  <b>Introduce:</b>
+  <b>照片介绍</b>
   <%= @picture.introduce %>
 </p>
 
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+<%= link_to '编辑', edit_picture_path(@picture) %> |
+<%= link_to '返回', pictures_path %>

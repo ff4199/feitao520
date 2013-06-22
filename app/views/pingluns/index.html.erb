@@ -1,0 +1,26 @@
+<h1>Listing pingluns</h1>
+
+<table>
+  <tr>
+    <th>Comment</th>
+    <th>User</th>
+    <th>shuoshuo_id</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pingluns.each do |pinglun| %>
+  <tr>
+    <td><%= pinglun.comment %></td>
+    <td><%= pinglun.user %></td>
+    <td><%= pinglun.shuoshuo_id %></td>
+    <td><%= link_to 'Show', pinglun %></td>
+    <td><%= link_to 'Edit', edit_pinglun_path(pinglun) %></td>
+    <td><%= link_to 'Destroy', pinglun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pinglun', new_pinglun_path %>

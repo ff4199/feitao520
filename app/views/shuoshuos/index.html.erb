@@ -1,6 +1,6 @@
 
 <div class="top_shuoshuo">
- 
+  
 </div>
 <div class="fei_shuoshuo">
     <% @shuoshuos.each do |shuoshuo| %>
@@ -11,40 +11,45 @@
                 <div class="caption" contenteditable="true">
                    <button class="date btn btn-primary btn-large btn-block" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="feishuoshuo_title"><%= shuoshuo.title %></h3>
-                  <p ><%= shuoshuo.content %></p>
-                  <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a></p>
+                  <p ><h3><%= shuoshuo.content %></h3></p>
+                 <!--  <div class="pinglun_fei">
+                    <%=render "pinglun_fei"%>
+                  </div> -->
                 </div>
               </div>
             </li>
           </ul>
       <% end %>
-    <% end %>
+    <% end %>   
 </div>
 
 <div class="zhongjian">
     <div class="button_fei">
        <button id="modal-304241" href="#modal-container-304241" role="button" class="fei_button btn btn-primary btn-large" data-toggle="modal">他说</button> 
+       <%=render "fei_public"%>
     </div>
     <div class="button_tao">
        <button id="modal-160836" href="#modal-container-160836" role="button" class="tao_button btn btn-large btn-danger" data-toggle="modal">她说</button>
-       <%=hidden_field_tag "flag",@where,class:"hidden"%>
        
-       <%=render "fei_public"%>
+       <%=render "tao_public"%>
     </div>
-    <!-- <div class="fei1">aaaaa</div> -->
-    <%=@where%>
+    <div class="together_date">
+       <h2>我们在一起<br>&nbsp;&nbsp;第<%=((Time.now+8*60*60-Time.new(2011,9,11))/3600/24).to_i-%>天</h2>
+       
+    </div>
 </div>
 
 <div class="tao_shuoshuo">
+  
   <% @shuoshuos.each do |shuoshuo| %>
       <%if shuoshuo.user=="tao"%>      
           <ul class="thumbnails">
             <li class="span5 content">
               <div class="thumbnail"> <img  src="img/people.jpg">
                 <div class="caption" contenteditable="true">
-                  <button class="date btn btn-large btn-block btn-warning" type="button"><%=shuoshuo.created_at%></button> 
+                  <button class="date btn btn-large btn-block btn-warning" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="taoshuoshuo_title"><%= shuoshuo.title %></h3>
-                  <p><%= shuoshuo.content %></p>
+                  <p><h3><%= shuoshuo.content %></h3></p>
                   <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a></p>
                 </div>
               </div>
@@ -52,6 +57,7 @@
           </ul>
       <% end %>
     <% end %>
+    
 </div>
  
 
@@ -59,7 +65,7 @@
 
 
 
-<h1>Listing shuoshuos</h1>
+<!-- <h1>Listing shuoshuos</h1>
 
 <table>
   <tr>
@@ -88,4 +94,4 @@
 
 <br />
 
-<%= link_to 'New Shuoshuo', new_shuoshuo_path %>
+<%= link_to 'New Shuoshuo', new_shuoshuo_path %> -->

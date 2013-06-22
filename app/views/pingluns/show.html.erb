@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Comment:</b>
+  <%= @pinglun.comment %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @pinglun.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_pinglun_path(@pinglun) %> |
+<%= link_to 'Back', pingluns_path %>

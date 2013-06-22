@@ -1,0 +1,9 @@
+
+<%=form_tag ("/pingluns") do -%>
+  <%=label_tag "评论"%>
+    <%=text_area_tag :comment,params[:comment],size:20%>
+    <%=hidden_field_tag :user,"fei"%>
+    <%=hidden_field_tag :shuoshuo_id,1%>
+        
+ <%=submit_tag "发送",class:"btn btn-primary"%>
+ <%end-%>

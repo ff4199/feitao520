@@ -2,10 +2,12 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+     @pictures = Picture.paginate(page: params[:page],     
+                                  :per_page => 30,   
+                                 )
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render layout: "layoutforpic" }# index.html.erb
       format.json { render json: @pictures }
     end
   end
@@ -41,9 +43,9 @@ class PicturesController < ApplicationController
   # POST /pictures.json
   def create
     @picture = Picture.new(params[:picture])
-
     respond_to do |format|
       if @picture.save
+        Attachment.create(:attachment=>params[:attachment],:attachmentable=> @picture) if params[:attachment]
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render json: @picture, status: :created, location: @picture }
       else

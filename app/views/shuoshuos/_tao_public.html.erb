@@ -7,7 +7,7 @@
     </div>
     <div class="modal-body">
       
-      <%=form_tag ("/shuoshuos")%>
+      <%=form_tag ("/shuoshuos") do -%>
 		<%=label_tag "主题"%>
 		<%=text_field_tag :title,params[:title],size:20%>
 
@@ -17,6 +17,7 @@
     </div>
     <div class="modal-footer">              
        <%=submit_tag "发表",class:"btn btn-danger"%>
+       <%end -%>
        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
     </div>
   </div>

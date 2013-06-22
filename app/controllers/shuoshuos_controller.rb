@@ -5,9 +5,11 @@ class ShuoshuosController < ApplicationController
   # GET /shuoshuos.json
   def index
     @shuoshuos = Shuoshuo.all
-
+    @shuoshuos_fei=Shuoshuo.paginate(page: params[:page],     
+                                  :per_page =>5,   
+                                 )
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render  layout: "layoutforshuoshuo"}# index.html.erb
       format.json { render json: @shuoshuos }
     end
   end
@@ -43,7 +45,6 @@ class ShuoshuosController < ApplicationController
   # POST /shuoshuos.json
   def create
     @shuoshuo = Shuoshuo.new(user:params[:user],title:params[:title],content:params[:content])
-
     respond_to do |format|
       if @shuoshuo.save
         format.html { redirect_to @shuoshuo, notice: '说说发表成功' }
