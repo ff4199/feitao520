@@ -7,7 +7,7 @@
       <%if shuoshuo.user=="fei"%>      
           <ul class="thumbnails ">
             <li class="span5 content">
-              <div class="thumbnail"> <img  src="img/people.jpg">
+              <div class="thumbnail"> 
                 <div class="caption" contenteditable="true">
                    <button class="date btn btn-primary btn-large btn-block" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="feishuoshuo_title"><%= shuoshuo.title %></h3>
@@ -32,10 +32,11 @@
     </div>
     <div class="button_tao">
        <button id="modal-160836" href="#modal-container-160836" role="button" class="tao_button btn btn-large btn-danger" data-toggle="modal">她说</button>
-       
+     
        <%=render "tao_public"%>
     </div>
-     
+       <embed src="<%= asset_path('1.mp3') %>"height=60 width=250 loop=true title="青春纪念册"  align=center sytle="float:left"></embed>
+       
     <div class="together_date">
        <h2>我们在一起<br>&nbsp;&nbsp;第<%=((Time.now+8*60*60-Time.new(2011,9,11))/3600/24).to_i-%>天</h2>
        
@@ -48,7 +49,7 @@
       <%if shuoshuo.user=="tao"%>      
           <ul class="thumbnails">
             <li class="span5 content">
-              <div class="thumbnail"> <img  src="img/people.jpg">
+              <div class="thumbnail"> 
                 <div class="caption" contenteditable="true">
                   <button class="date btn btn-large btn-block btn-warning" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="taoshuoshuo_title"><%= shuoshuo.title %></h3>
