@@ -24,18 +24,25 @@
 
 <% @pictures.each do |picture| -%>
   <% picture.attachments.each do |attachment| -%>
+  
 <div class="pic">
     <div class="">
         <div class="carousel-inner">
           <div class="item active ">
-            <%= image_tag attachment.attachment.url() ,:class=>"img-polaroid"%>
+            <%= image_tag attachment.attachment.url() ,:class=>"img-polaroid",size:"400x340"%>
             <div class="carousel-caption">
               <h4>
                <%= picture.name %>
               </h4>
               <p>
                <%= picture.introduce %>
+               <div style="margin-left:5px;float:left">
+               <%= link_to '编辑', edit_picture_path(picture),class:"btn btn-primary" %></div>
+               <div style="margin-left:260px;float:left">
+               <%= link_to '删除', picture, method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger"%>
+             </div>
               </div>
+              
               </p>
             </div>
           </div>
@@ -45,7 +52,9 @@
 
 <% end -%>
 <% end -%>
- <%= will_paginate @pictures  ,:prev_label=>'上一页',:next_label=>'下一页',:separator=>" | "%>
+<div style="margin-left:500px;margin-top:50px">
+ <%= will_paginate @pictures  ,:prev_label=>'Previous',:next_label=>'Next→',:separator=>" | "%>
+ </div>
  <br>
 
 <!-- <h1>Listing pictures</h1>

@@ -12,6 +12,8 @@
                    <button class="date btn btn-primary btn-large btn-block" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="feishuoshuo_title"><%= shuoshuo.title %></h3>
                   <p ><h3><%= shuoshuo.content %></h3></p>
+                  <%= link_to '重新编辑', edit_shuoshuo_path(shuoshuo)%>
+                 <%= link_to '删除说说', shuoshuo, method: :delete, data: { confirm: '确定删除吗?' } %>
                  <!--  <div class="pinglun_fei">
                     <%=render "pinglun_fei"%>
                   </div> -->
@@ -50,7 +52,8 @@
                   <button class="date btn btn-large btn-block btn-warning" type="button"><%=(shuoshuo.created_at+8*60*60)%></button> 
                   <h3 class="taoshuoshuo_title"><%= shuoshuo.title %></h3>
                   <p><h3><%= shuoshuo.content %></h3></p>
-                  <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a></p>
+                  <%= link_to '重新编辑', edit_shuoshuo_path(shuoshuo) %>
+                 <%= link_to '删除说说', shuoshuo, method: :delete, data: { confirm: '确定删除吗?' } %>
                 </div>
               </div>
             </li>
@@ -64,8 +67,8 @@
 
 
 
-
-<!-- <h1>Listing shuoshuos</h1>
+<!-- 
+<h1>Listing shuoshuos</h1>
 
 <table>
   <tr>
