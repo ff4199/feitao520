@@ -10,7 +10,9 @@
         <div class="navbar-inner">
           <div class="container-fluid">
              <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">照片墙</a>
-              <span class="brand" style="margin-left:850px;"><%= link_to '上传照片', new_picture_path %></span>
+             <embed src="<%= asset_path('1.mp3') %>"height=60 width=810 loop=true
+      controls=playbutton title="青春纪念册"  align=center sytle="float:left"></embed>
+              <span class="brand" style="margin-left:40px;"><%= link_to '上传照片', new_picture_path %></span>
               <span class="brand"><%= link_to '返回首页', root_path %></span>
         </div>
         
@@ -56,8 +58,7 @@
  <%= will_paginate @pictures  ,:prev_label=>'Previous',:next_label=>'Next→',:separator=>" | "%>
  </div>
  <br>
- <embed src="<%= asset_path('3.mp3') %>"hidden=ture loop=true
-      controls=playbutton title="青春纪念册"  align=center></embed>
+
 
 <!-- <h1>Listing pictures</h1>
 
