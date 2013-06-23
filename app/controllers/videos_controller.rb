@@ -5,7 +5,7 @@ class VideosController < ApplicationController
     @videos = Video.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render layout:"layoutforpic"}# index.html.erb
       format.json { render json: @videos }
     end
   end
